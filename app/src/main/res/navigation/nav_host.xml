@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.studentslistadvanced.fragments.list.ListFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_listFragment_to_studenFragment"
+            app:destination="@id/studentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="com.example.studentslistadvanced.fragments.student.StudentFragment"
+        android:label="Student"
+        tools:layout="@layout/fragment_studen">
+        <action
+            android:id="@+id/action_studentFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="args"
+            app:argType="com.example.studentslistadvanced.model.Student" />
+    </fragment>
+</navigation>
